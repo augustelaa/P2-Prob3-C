@@ -72,6 +72,9 @@ public class Pedido {
     }
 
 	public void setTipoEntrega(TipoEntrega tipoEntrega) throws TipoEntregaInvalido {
+		if (tipoEntrega == null) {
+			throw new TipoEntregaInvalido("Tipo de entrega não definida.");
+		}
 		tipoEntrega.validarEntrega(this);
 		this.tipoEntrega = tipoEntrega;
 	}

@@ -28,7 +28,7 @@ public class Cenario1 {
 		
 		pedido.incluirItem(caneta, 2);
 		pedido.incluirItem(borracha, 2);
-		pedido.incluirItem(mouse, 1);
+		pedido.incluirItem(mouse, 6);
 		
 		System.out.println("Valor dos itens: " + pedido.getValorPedido());
 		System.out.println("Peso dos itens: " + pedido.getPesoPedido());
@@ -42,11 +42,13 @@ public class Cenario1 {
 		} catch (TipoEntregaInvalido e) {
 			e.printStackTrace();
 		}
+
+		System.out.println("---------------PAC-----------------");
 		
 		System.out.println("Valor entrega: " + pedido.getValorEntrega());
 		System.out.println("Valor total: " + pedido.getValorTotal());
 		
-		System.out.println("--------------------------------");
+		System.out.println("---------------RETIRADA-------------");
 		
 		try {
 			pedido.setTipoEntrega(tipoEntregaRetirada);
@@ -57,7 +59,7 @@ public class Cenario1 {
 		System.out.println("Valor entrega: " + pedido.getValorEntrega());
 		System.out.println("Valor total: " + pedido.getValorTotal());
 		
-		System.out.println("--------------------------------");
+		System.out.println("---------------SEDEX---------------");
 		
 		try {
 			pedido.setTipoEntrega(tipoEntregaSEDEX);

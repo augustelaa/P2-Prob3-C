@@ -15,8 +15,10 @@ public class TipoEntregaSEDEX implements TipoEntrega {
 			return 30;
 		} else if (pedido.getPesoPedido() <= 2000) {
 			return 45;
+		}else {
+			int multiplicador = (int) (Math.ceil(pedido.getPesoPedido() - 2000)/100);
+			return 45 + 1.5*multiplicador;
 		}
-		return 0;
 	}
 
 	@Override
