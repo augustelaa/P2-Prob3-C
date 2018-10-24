@@ -1,0 +1,7 @@
+1) Está fracamente acoplado, temos uma interface e uma implementação para cada tipo de entrega que fica responsável por calcular o valor e tratar as excessões de cada entrega separadamente.
+
+Sim, o pedido sabe qual é o seu tipo de entrega.
+
+2) Sim, basta criar uma classe que implemente a interface previamente mencionada.
+
+3) Não, cada implementação da interface possui seu calculo (algoritmo) e excessões de forma independente. Não existe nem if nem switch para saber como o calculo deve ser feito, apenas a chamada do método calcularValorEntrega.

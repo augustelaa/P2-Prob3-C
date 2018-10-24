@@ -70,6 +70,14 @@ public class Pedido {
         }
         return pesoTotal;
     }
+    
+    public int getQuantidadeProdutos() {
+    	int quantidade = 0;
+        for (ItemPedido ip : this.itens) {
+        	quantidade += ip.getQuantidade();
+        }
+        return quantidade;
+    }
 
 	public void setTipoEntrega(TipoEntrega tipoEntrega) throws TipoEntregaInvalido {
 		if (tipoEntrega == null) {
