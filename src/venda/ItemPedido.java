@@ -41,4 +41,8 @@ class ItemPedido {
     protected double getValorItem() {
         return this.quantidade * this.produto.getValor();
     }
+    
+    protected double getPesoItem() {
+    	return this.quantidade * this.produto.getPeso();
+    }
 }

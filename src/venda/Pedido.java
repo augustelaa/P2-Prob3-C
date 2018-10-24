@@ -3,6 +3,9 @@ package venda;
 import java.util.ArrayList;
 import java.util.Date;
 
+import entrega.TipoEntrega;
+import excessoes.TipoEntregaInvalido;
+
 public class Pedido {
 
     private int numero;
@@ -10,8 +13,10 @@ public class Pedido {
     private Date data;
     private String endereco;
     private ArrayList<ItemPedido> itens;
+    private TipoEntrega tipoEntrega;
 
     public Pedido() {
+    	itens = new ArrayList<ItemPedido>();
     }
 
     public int getNumero() {
@@ -56,6 +61,27 @@ public class Pedido {
             valorTotal += (ip.getValorItem());
         }
         return valorTotal;
+    }
+    
+    public double getPesoPedido() {
+        double pesoTotal = 0;
+        for (ItemPedido ip : this.itens) {
+        	pesoTotal += (ip.getPesoItem());
+        }
+        return pesoTotal;
+    }
+
+	public void setTipoEntrega(TipoEntrega tipoEntrega) throws TipoEntregaInvalido {
+		tipoEntrega.validarEntrega(this);
+		this.tipoEntrega = tipoEntrega;
+	}
+
+	public double getValorEntrega() {
+    	return tipoEntrega.calcularValorEntrega(this);
+    }
+    
+    public double getValorTotal() {
+    	return getValorPedido() + getValorEntrega();
     }
 
 }
