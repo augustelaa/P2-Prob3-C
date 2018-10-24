@@ -86,6 +86,10 @@ public class Pedido {
 		tipoEntrega.validarEntrega(this);
 		this.tipoEntrega = tipoEntrega;
 	}
+	
+	public TipoEntrega getTipoEntrega() {
+		return tipoEntrega;
+	}
 
 	public double getValorEntrega() {
     	return tipoEntrega.calcularValorEntrega(this);
