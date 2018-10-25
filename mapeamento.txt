@@ -1,0 +1,7 @@
+Singleton:
+Temos o método estático getInstancia em todas as implementações de TipoEntrega, onde se não houver um handler (previamente implementado também como estático) criamos um (sempre fazendo a classe criar ela mesma), caso tivermos um handler, em todo o processamento do programa utilizaremos o mesmo.
+
+Strategy:
+Temos uma interface chamada TipoEntrega.
+Temos a implementação dos tipos de entrega (TipoEntregaMotoboy, TipoEntregaPAC, TipoEntregaRetirada e TipoEntregaSEDEX) com base na interface TipoEntrega.
+Intercambiamos o cálculo e as exessões de forma genérica sempre utilizando a interface e não diretamente as implementações.
