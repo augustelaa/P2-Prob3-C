@@ -4,6 +4,16 @@ import excessoes.TipoEntregaInvalido;
 import venda.Pedido;
 
 public class TipoEntregaSEDEX implements TipoEntrega {
+	
+	private static TipoEntregaSEDEX handler;
+
+	public static TipoEntregaSEDEX getInstancia() {
+		if (handler == null) {
+			handler = new TipoEntregaSEDEX();
+			System.out.println("Criei SEDEX.");
+		}
+		return handler;
+	}
 
 	@Override
 	public double calcularValorEntrega(Pedido pedido) {

@@ -78,6 +78,10 @@ public class Pedido {
         }
         return quantidade;
     }
+    
+    public void cancelarTipoEntrega() {
+    	this.tipoEntrega = null;
+    }
 
 	public void setTipoEntrega(TipoEntrega tipoEntrega) throws TipoEntregaInvalido {
 		if (tipoEntrega == null) {

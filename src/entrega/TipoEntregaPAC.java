@@ -6,6 +6,16 @@ import venda.Pedido;
 public class TipoEntregaPAC implements TipoEntrega {
 	
 	public static final double PESO_MAXIMO = 5000;
+	
+	private static TipoEntregaPAC handler;
+
+	public static TipoEntregaPAC getInstancia() {
+		if (handler == null) {
+			handler = new TipoEntregaPAC();
+			System.out.println("Criei PAC.");
+		}
+		return handler;
+	}
 
 	@Override
 	public double calcularValorEntrega(Pedido pedido) {
