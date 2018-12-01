@@ -5,3 +5,20 @@ Strategy:
 Temos uma interface chamada TipoEntrega.
 Temos a implementação dos tipos de entrega (TipoEntregaMotoboy, TipoEntregaPAC, TipoEntregaRetirada e TipoEntregaSEDEX) com base na interface TipoEntrega.
 Intercambiamos o cálculo e as exessões de forma genérica sempre utilizando a interface e não diretamente as implementações.
+
++-*+-*+-*+-*+-*+-*+-*+-*
+Observações do Professor:
+Parabéns!
+- exessões -> exceções
+
+- vocês implementaram a validação da entrega separada do cálculo:
+public interface TipoEntrega {
+	public double calcularValorEntrega(Pedido pedido);
+	public void validarEntrega(Pedido pedido) throws TipoEntregaInvalido;
+}
+se o programador não quiser validar, ele pode calcular a entrega e tudo parecerá bem. Cuidado!
+
+
+Nota (0-3):3,0
+
+
